@@ -16,7 +16,6 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
         <!-- Styles -->
         <style>
             html, body {
@@ -69,6 +68,7 @@
 
             .m-b-md {
                 margin-bottom: 30px;
+                font-size: 70px;
             }
         </style>
     </head>
@@ -82,7 +82,7 @@
                 </div>
             <div class="content">
                 <div class="title m-b-md">
-                    Unidades Tecnológicas de Santander UTS
+                    Unidades Tecnológicas de Santander
                 </div>
 
                 <div class="links">

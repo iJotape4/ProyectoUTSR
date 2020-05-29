@@ -87,7 +87,8 @@
 
                 <div class="links">
                     <a href="graduados_1.jsp">Graduados</a>
-                    <a href="/">Insertar graduado</a>
+                    <a href="addgraduado.jsp">Insertar graduado</a>
+                    <a href="addgraduado.jsp">Modalidades de Trabajo de grado</a>
                 </div>
             </div>
         </div>

@@ -41,7 +41,9 @@
                  text-transform: uppercase;
             }
             .table {  
-                text-align: left;          
+                text-align: left;
+                margin-left: 320px;
+                width: 50%;
             }
         </style>
     </head>

@@ -82,7 +82,7 @@
                 </div>
             <div class="content">
                 <div class="title m-b-md">
-                    Unidades Tecnológicas de Santander
+                    Unidades Tecnológicas de Santander UTS
                 </div>
 
                 <div class="links">

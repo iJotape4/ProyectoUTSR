@@ -40,50 +40,37 @@
                  font-size: 30px;
                  text-transform: uppercase;
             }
-            .table {
-                text-align: center;
+            .table {  
+                text-align: left;          
             }
         </style>
     </head>
     <body>
         <sql:query dataSource="${proyectouts}" var="bellamy"> 
-            select grad_id, grad_nombre, grad_cedula, grad_fnacimiento, grad_correo, grad_tel, grad_direccion, grad_estsocial, grad_beca, carrera.carr_nombre as carrera, sede.sede_nombre as sede
+            select grad_id, grad_nombre, grad_cedula, grad_fnacimiento, grad_correo, grad_tel, grad_direccion, grad_estsocial, grad_beca, carrera.carr_nombre as carrera
             from graduados
-            inner join carrera
-            on grad_carr_id = carr_id inner join sede on grad_sede_id = sede_id
+            left join carrera
+            on grad_carr_id = carr_id
         </sql:query>
         <div class="center">
             <div class="content">
                 <h1>Graduados</h1>
-            </div>  
+                 </div>  
+            <p>Ésta es una tabla reducida, para ver su versión completa haga click en la cédula de cualquier usuario.</p>
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">Cédula</th>
-                        <th scope="col">Nombre</th> 
-                        <th scope="col">Fecha de nacimiento</th>
-                        <th scope="col">Correo</th>
-                        <th scope="col">Télefono</th>
-                        <th scope="col">Dirección</th>
-                        <th scope="col">Estrato Social</th>
-                        <th scope="col">Beca</th>
+                        <th scope="col">Nombre</th>
                         <th scope="col">Carrera</th>
-                        <th scope="col">Sede</th>
                     </tr>
                 </thead>
                 <tbody>
                 <c:forEach var="fila" items="${bellamy.rows}">
                     <tr>
-                    <td><c:out value="${fila.grad_cedula}"/> </td>
+                        <td><a href="graduados.jsp"><c:out value="${fila.grad_cedula}"/></a></td>
                     <td><c:out value="${fila.grad_nombre}"/> </td>
-                    <td><c:out value="${fila.grad_fnacimiento}"/> </td>
-                    <td><c:out value="${fila.grad_correo}"/> </td>
-                    <td><c:out value="${fila.grad_tel}"/> </td>
-                    <td><c:out value="${fila.grad_direccion}"/> </td>
-                    <td><c:out value="${fila.grad_estsocial}"/> </td>
-                    <td><c:out value="${fila.grad_beca}"/> </td>
                     <td><c:out value="${fila.carrera}"/> </td>
-                    <td><c:out value="${fila.sede}"/> </td>
                     </tr>
                 </c:forEach>
                 </tbody>

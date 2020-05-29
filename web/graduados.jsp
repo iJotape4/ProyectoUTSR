@@ -11,16 +11,39 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Graduados</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <style>
+            html, body {
+                background-color: #fff;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 200;
+                height: 100vh;
+                margin: 0;
+            }
             .links > a {
-                color: #636b6f;
+                color: blue;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
-                font-family: 'Nunito', sans-serif;
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
+            }
+            .center {
+                text-align: center;
+            }
+                
+             .content {
+                 margin-top: 50px;
+                 margin-bottom: 30px;
+                 color: greenyellow;
+                 font-size: 30px;
+                 text-transform: uppercase;
+            }
+            #table {
+                text-align: center;
+                margin-left: 100px;
+                margin-right: 100px;
             }
         </style>
     </head>
@@ -32,28 +55,26 @@
             on grad_carr_id = carr_id
         </sql:query>
         <div class="center">
-            <br>
-            <h2>Graduados</h2>
-            <br>
-            <table border="1">
-                <thead>
+            <div class="content">
+                <h1>Graduados</h1>
+            </div>  
+            <table class="table">
+                <thead class="thead-dark">
                     <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Cédula</th>
-                        <th>Fecha de nacimiento</th>
-                        <th>Correo</th>
-                        <th>Télefono</th>
-                        <th>Dirección</th>
-                        <th>Estrato Social</th>
-                        <th>Beca</th>
-                        <th>Carrera</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Cédula</th>
+                        <th scope="col">Fecha de nacimiento</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Télefono</th>
+                        <th scope="col">Dirección</th>
+                        <th scope="col">Estrato Social</th>
+                        <th scope="col">Beca</th>
+                        <th scope="col">Carrera</th>
                     </tr>
                 </thead>
                 <tbody>
                 <c:forEach var="fila" items="${bellamy.rows}">
                     <tr>
-                    <td><c:out value="${fila.grad_id}"/> </td>
                     <td><c:out value="${fila.grad_nombre}"/> </td>
                     <td><c:out value="${fila.grad_cedula}"/> </td>
                     <td><c:out value="${fila.grad_fnacimiento}"/> </td>
